@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "heap.h"
 #include "tested_declarations.h"
 #include "rdebug.h"
 

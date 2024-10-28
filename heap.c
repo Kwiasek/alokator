@@ -1,18 +1,34 @@
 #include "heap.h"
 
-void * heap_start = NULL;
+#define PAGE_SIZE 4096
+#define FENCE_SIZE 16
+#define FENCE_PATTERN 0xaa
+
+struct chunk_t {
+    struct chunk_t *next;
+    struct chunk_t *prev;
+    size_t size;
+    size_t checksum;
+    int free;
+};
+
+struct heap_t {
+    int size;
+    void * start;
+    struct chunk_t *first_chunk;
+} heap;
 
 int heap_setup(void) {
-    if (heap_start != NULL) return -1;
-    heap_start = custom_sbrk(HEAP_SIZE);
-    if (heap_start == (void *) - 1) return -1;
+    heap.start = custom_sbrk(PAGE_SIZE);
+    if (heap.start == (void *)-1) {
+        return -1;
+    }
+    heap.size = PAGE_SIZE;
+    heap.first_chunk = NULL;
     return 0;
 }
 void heap_clean(void) {
-    if (heap_start == NULL) return;
-    memset(heap_start, 0, HEAP_SIZE);
-    custom_sbrk(-HEAP_SIZE);
-    heap_start = NULL;
+    
 }
 void* heap_malloc(size_t size) {
 

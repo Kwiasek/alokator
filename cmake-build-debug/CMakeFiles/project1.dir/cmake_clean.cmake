@@ -1,10 +1,16 @@
 file(REMOVE_RECURSE
   "CMakeFiles/project1.dir/heap.c.o"
+  "CMakeFiles/project1.dir/heap.c.o.d"
   "CMakeFiles/project1.dir/main.c.o"
+  "CMakeFiles/project1.dir/main.c.o.d"
   "CMakeFiles/project1.dir/memmanager.c.o"
+  "CMakeFiles/project1.dir/memmanager.c.o.d"
   "CMakeFiles/project1.dir/rdebug.c.o"
+  "CMakeFiles/project1.dir/rdebug.c.o.d"
   "CMakeFiles/project1.dir/unit_helper_v2.c.o"
+  "CMakeFiles/project1.dir/unit_helper_v2.c.o.d"
   "CMakeFiles/project1.dir/unit_test_v2.c.o"
+  "CMakeFiles/project1.dir/unit_test_v2.c.o.d"
   "project1"
   "project1.pdb"
 )

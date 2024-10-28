@@ -5,8 +5,6 @@
 #include <string.h>
 #include "custom_unistd.h"
 
-#define HEAP_SIZE 4000
-
 enum pointer_type_t
 {
     pointer_null,
